@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.0)
+project( opencv-marker )
+set (CMAKE_CXX_STANDARD 11)
+include_directories(/opt/homebrew/Cellar/opencv/4.5.5_2/include/opencv4)
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS})
+add_executable( DisplayMarker DisplayMarker.cpp )
+target_link_libraries( DisplayMarker ${OpenCV_LIBS} )
